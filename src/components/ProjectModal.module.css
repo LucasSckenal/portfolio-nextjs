@@ -1,0 +1,278 @@
+/* ══════════════════════════════════════
+   PROJECT MODAL — Cyan design system
+   Animations handled by Framer Motion
+══════════════════════════════════════ */
+
+/* ── Backdrop ── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* ── Panel ── */
+.panel {
+  background: #101010;
+  border: 1px solid #242424;
+  border-top: 3px solid var(--cyan);
+  border-radius: var(--radius-lg);
+  width: 100%;
+  max-width: 660px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px var(--cyan-border),
+    0 48px 120px rgba(0, 0, 0, 0.85);
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 26px 30px 22px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.headerMeta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Category badge — static label */
+.category {
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: var(--cyan);
+  background: var(--cyan-dim);
+  border: 1px solid var(--cyan-border);
+  border-radius: 4px;
+  padding: 2px 7px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.year {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gray-dim);
+}
+
+/* Title — static heading, no hover */
+.title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+/* Close button — interactive */
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  color: var(--gray-dim);
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition:
+    color         var(--transition),
+    border-color  var(--transition),
+    background    var(--transition);
+  /* Rotation handled by Framer Motion whileHover */
+}
+.closeBtn:hover {
+  color: var(--white);
+  border-color: var(--cyan-border);
+  background: var(--cyan-dim);
+}
+.closeBtn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+/* ── Body — scrollable content ── */
+.body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 26px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+  scrollbar-width: thin;
+  scrollbar-color: #252525 transparent;
+}
+.body::-webkit-scrollbar       { width: 4px; }
+.body::-webkit-scrollbar-thumb { background: #252525; border-radius: 2px; }
+.body::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+
+/* Summary quote block — static */
+.summary {
+  font-size: 0.97rem;
+  color: var(--gray);
+  line-height: 1.72;
+  padding: 15px 18px;
+  background: var(--cyan-dim);
+  border-left: 3px solid var(--cyan);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+/* Content sections */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+/* Section labels — static, no hover */
+.sectionTitle {
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  font-weight: 700;
+  color: var(--gray-dim);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.longDesc {
+  font-size: 0.93rem;
+  color: var(--gray);
+  line-height: 1.75;
+}
+
+/* Highlights — static list items */
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.highlightItem {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--gray);
+  line-height: 1.55;
+}
+
+.highlightIcon {
+  color: var(--cyan);
+  font-size: 0.76rem;
+  flex-shrink: 0;
+}
+
+/* Tags — static labels, no hover, no cursor */
+.tags { display: flex; flex-wrap: wrap; gap: 8px; }
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--white);
+  background: var(--bg-card);
+  border: 1px solid var(--cyan-border);
+  border-radius: 100px;
+  padding: 5px 13px;
+  letter-spacing: 0.03em;
+  cursor: default; /* explicitly not interactive */
+}
+
+/* ── Footer / Actions ── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 18px 30px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Outline button — interactive */
+.btnOutline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.855rem;
+  font-weight: 600;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 9px 18px;
+  cursor: pointer;
+  transition:
+    border-color  var(--transition),
+    background    var(--transition);
+}
+.btnOutline:hover {
+  border-color: var(--cyan-border);
+  background: var(--cyan-dim);
+}
+.btnOutline:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+
+/* Primary button — interactive */
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.855rem;
+  font-weight: 700;
+  color: var(--bg-deep);
+  background: var(--cyan);
+  border-radius: 100px;
+  padding: 9px 20px;
+  cursor: pointer;
+  transition:
+    background  var(--transition),
+    box-shadow  var(--transition);
+}
+.btnPrimary:hover {
+  background: var(--cyan-light);
+  box-shadow: 0 4px 20px rgba(0, 229, 255, 0.3);
+}
+.btnPrimary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+
+/* ── Mobile: bottom sheet ── */
+@media (max-width: 600px) {
+  .backdrop {
+    padding: 0;
+    align-items: flex-end;
+  }
+  .panel {
+    max-height: 94vh;
+    border-radius: 20px 20px 0 0;
+    border-top-width: 3px;
+  }
+  .header { padding: 20px 18px 16px; }
+  .body   { padding: 18px; }
+  .footer {
+    padding: 14px 18px;
+    flex-direction: column;
+  }
+  .btnOutline,
+  .btnPrimary { width: 100%; justify-content: center; }
+}

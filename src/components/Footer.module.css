@@ -1,0 +1,66 @@
+.footer {
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+  background: var(--bg-deep);
+  /* margin-top: auto handled by flex layout in body */
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 700;
+  /* static text — no cursor, no hover effect */
+}
+.cyan { color: var(--cyan); }
+
+.copy {
+  font-size: 0.78rem;
+  color: var(--gray-dim);
+  text-align: center;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Social icon buttons — interactive, get hover + focus */
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius);
+  color: var(--gray-dim);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition:
+    color         var(--transition),
+    border-color  var(--transition),
+    background    var(--transition),
+    transform     var(--transition);
+}
+.socialLink:hover {
+  color: var(--cyan);
+  border-color: var(--cyan-border);
+  background: var(--cyan-dim);
+  transform: translateY(-2px);
+}
+.socialLink:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  .inner { justify-content: center; text-align: center; }
+}

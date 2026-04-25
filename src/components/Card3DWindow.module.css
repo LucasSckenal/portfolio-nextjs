@@ -1,0 +1,135 @@
+/* ══════════════════════════════════════════════════════
+   Card3DWindow.module.css
+   The DOM "frame" around the 3D View — corner accents,
+   scanline, category label. All transitions sync with
+   the 3D object's hover state.
+══════════════════════════════════════════════════════ */
+
+/* ── Main window container ── */
+.window {
+  position: relative;
+  width: 100%;
+  height: 130px;
+
+  /* Subtle dark background so the 3D object has a backdrop
+     while keeping the dark card aesthetic.                  */
+  background: rgba(0, 14, 30, 0.5);
+  border-radius: 8px;
+  overflow: hidden;
+
+  /* Inset border that glows on hover */
+  box-shadow: inset 0 0 0 1px rgba(0, 229, 255, 0.12);
+  transition: box-shadow 0.35s ease;
+
+  cursor: default;
+}
+
+.windowHovered {
+  box-shadow:
+    inset 0 0 0 1px rgba(0, 229, 255, 0.4),
+    0 0 24px rgba(0, 229, 255, 0.08);
+}
+
+/* ── Corner accents — 4 glowing L-shaped corners ── */
+.corner {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  opacity: 0.45;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.windowHovered .corner {
+  opacity: 1;
+  width: 16px;
+  height: 16px;
+}
+
+/* Top-left */
+.corner[data-pos="tl"] {
+  top: 7px; left: 7px;
+  border-top:  1.5px solid #00E5FF;
+  border-left: 1.5px solid #00E5FF;
+}
+/* Top-right */
+.corner[data-pos="tr"] {
+  top: 7px; right: 7px;
+  border-top:   1.5px solid #00E5FF;
+  border-right: 1.5px solid #00E5FF;
+}
+/* Bottom-left */
+.corner[data-pos="bl"] {
+  bottom: 7px; left: 7px;
+  border-bottom: 1.5px solid #00E5FF;
+  border-left:   1.5px solid #00E5FF;
+}
+/* Bottom-right */
+.corner[data-pos="br"] {
+  bottom: 7px; right: 7px;
+  border-bottom: 1.5px solid #00E5FF;
+  border-right:  1.5px solid #00E5FF;
+}
+
+/* ── Scanline effect ── */
+.scanline {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 229, 255, 0.018) 2px,
+    rgba(0, 229, 255, 0.018) 4px
+  );
+}
+
+.windowHovered .scanline {
+  opacity: 1;
+}
+
+/* Animated scan sweep on hover */
+.windowHovered .scanline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 40px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(0, 229, 255, 0.06),
+    transparent
+  );
+  animation: scan 2.4s linear infinite;
+}
+
+@keyframes scan {
+  from { top: -40px; }
+  to   { top: 130px; }
+}
+
+/* ── Category label — monospace, bottom-left ── */
+.label {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  z-index: 2;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: rgba(0, 229, 255, 0.4);
+  transition: color 0.3s ease;
+  pointer-events: none;
+  user-select: none;
+}
+
+.windowHovered .label {
+  color: rgba(0, 229, 255, 0.7);
+}

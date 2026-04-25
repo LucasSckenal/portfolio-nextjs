@@ -1,0 +1,41 @@
+.breadcrumb { margin-bottom: 40px; }
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sep {
+  color: var(--gray-dim);
+  font-size: 0.78rem;
+}
+
+/* Link is interactive — cursor + hover */
+.link {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--gray-dim);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color var(--transition);
+}
+.link:hover        { color: var(--cyan); }
+.link:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; border-radius: 3px; }
+
+/* Current page — NOT interactive, no cursor */
+.current {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--cyan);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
