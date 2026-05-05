@@ -22,68 +22,68 @@ import styles from './page.module.css';
 
 const experience = [
   {
-    title: 'Senior Full Stack Developer',
-    company: 'TechCorp Brasil',
-    period: '2022 — Presente',
-    type: 'CLT',
-    desc: 'Liderança técnica de squad multidisciplinar. Arquitetura de microsserviços com Node.js e Next.js. Redução de 40% no tempo de carregamento das aplicações e implementação de CI/CD.',
-    achievements: ['Liderou equipe de 6 devs', 'Reduziu TTL em 40%', '+3 produtos lançados'],
+    title: 'Estudante de Ciência da Computação',
+    company: 'Graduação em andamento',
+    period: 'Atual',
+    type: 'Acadêmico',
+    desc: 'Formação superior em Ciência da Computação com base em algoritmos, estruturas de dados, programação orientada a objetos, banco de dados e engenharia de software.',
+    achievements: ['Algoritmos e ED', 'POO em Java', 'Banco de Dados / SQL'],
   },
   {
-    title: 'Full Stack Developer',
-    company: 'StartupXYZ',
-    period: '2020 — 2022',
-    type: 'CLT',
-    desc: 'Desenvolvimento de plataforma SaaS do zero. Stack: React, Node.js, MongoDB. Crescimento de 200% de usuários em 18 meses, de 10k para 30k MAU.',
-    achievements: ['30k usuários ativos', 'Série A conquistada', 'SaaS do zero'],
+    title: 'Desenvolvimento Back-End (Auto-estudo)',
+    company: 'Projetos pessoais',
+    period: 'Em andamento',
+    type: 'Estudo',
+    desc: 'Aprofundamento em desenvolvimento back-end com Python e Java — construção de APIs REST, integração com bancos relacionais e práticas de código limpo.',
+    achievements: ['APIs REST', 'Python + Java', 'SQL relacional'],
   },
   {
-    title: 'Front-end Developer',
-    company: 'Agência Digital',
-    period: '2018 — 2020',
-    type: 'CLT',
-    desc: 'Criação de interfaces para clientes enterprise. Foco em performance, acessibilidade e design system. Projetos para segmentos financeiro e de saúde.',
-    achievements: ['10+ clientes enterprise', 'Design system criado', 'WCAG 2.1 AA'],
+    title: 'Exploração da linguagem Crystal',
+    company: 'Aprendizado contínuo',
+    period: 'Em andamento',
+    type: 'Estudo',
+    desc: 'Explorando a linguagem Crystal — sintaxe expressiva inspirada em Ruby com performance compilada. Pequenos experimentos e ferramentas de linha de comando.',
+    achievements: ['Sintaxe Ruby-like', 'Performance compilada', 'Tooling CLI'],
   },
   {
-    title: 'Desenvolvedor Júnior',
-    company: 'Freelancer',
-    period: '2016 — 2018',
-    type: 'PJ',
-    desc: 'Projetos web para pequenas e médias empresas. HTML, CSS, JavaScript, WordPress e PHP. Construção de base sólida em UX e boas práticas.',
-    achievements: ['20+ projetos', 'Clientes fidelizados', 'Autodidatismo'],
+    title: 'Em busca da primeira oportunidade',
+    company: 'Open to work',
+    period: 'Disponível',
+    type: 'CLT / Estágio',
+    desc: 'Procurando a primeira oportunidade de emprego para aplicar os conhecimentos adquiridos, contribuir com a empresa e desenvolver habilidades práticas no ambiente profissional.',
+    achievements: ['Proativo', 'Aprendizado rápido', 'Disponível imediatamente'],
   },
 ];
 
 const skillGroups = [
   {
-    category: 'Front-end',
+    category: 'Linguagens',
     icon: '⬡',
     skills: [
-      { name: 'React / Next.js', level: 95 },
-      { name: 'TypeScript',      level: 90 },
-      { name: 'TailwindCSS',     level: 88 },
-      { name: 'Framer Motion',   level: 82 },
+      { name: 'Python',          level: 80 },
+      { name: 'Java',            level: 75 },
+      { name: 'SQL',             level: 78 },
+      { name: 'Crystal',         level: 55 },
     ],
   },
   {
     category: 'Back-end',
     icon: '◈',
     skills: [
-      { name: 'Node.js',         level: 92 },
-      { name: 'PostgreSQL',      level: 85 },
-      { name: 'Redis',           level: 78 },
-      { name: 'GraphQL',         level: 80 },
+      { name: 'APIs REST',       level: 70 },
+      { name: 'FastAPI / Flask', level: 65 },
+      { name: 'Spring (Java)',   level: 55 },
+      { name: 'POO',             level: 80 },
     ],
   },
   {
-    category: 'DevOps & Cloud',
+    category: 'Banco & Ferramentas',
     icon: '◎',
     skills: [
-      { name: 'Docker',          level: 85 },
-      { name: 'AWS',             level: 75 },
-      { name: 'CI/CD',           level: 88 },
-      { name: 'Kubernetes',      level: 65 },
+      { name: 'PostgreSQL / MySQL', level: 72 },
+      { name: 'Git / GitHub',       level: 80 },
+      { name: 'Linux',              level: 65 },
+      { name: 'Docker',             level: 50 },
     ],
   },
 ];
@@ -91,33 +91,33 @@ const skillGroups = [
 const education = [
   {
     degree: 'Bacharelado em Ciência da Computação',
-    school: 'Universidade de São Paulo',
-    period: '2012 — 2016',
+    school: 'Em andamento',
+    period: 'Atual',
     icon: '🎓',
-    desc: 'Formação sólida em algoritmos, estruturas de dados, sistemas distribuídos e engenharia de software.',
+    desc: 'Graduação com foco em algoritmos, estruturas de dados, programação orientada a objetos, banco de dados e engenharia de software.',
   },
   {
-    degree: 'AWS Certified Solutions Architect',
-    school: 'Amazon Web Services',
-    period: '2023',
-    icon: '☁️',
-    desc: 'Certificação profissional em arquitetura de soluções na nuvem AWS — Associate level.',
-  },
-  {
-    degree: 'Full Stack JavaScript',
-    school: 'The Odin Project / freeCodeCamp',
-    period: '2015 — 2016',
+    degree: 'Estudo autodidata em Back-End',
+    school: 'Documentações oficiais e projetos práticos',
+    period: 'Contínuo',
     icon: '💻',
-    desc: 'Formação complementar em desenvolvimento web moderno com foco no ecossistema JavaScript.',
+    desc: 'Aprofundamento prático em Python (FastAPI, Flask), Java (Spring) e modelagem de banco de dados relacional.',
+  },
+  {
+    degree: 'Exploração de novas linguagens',
+    school: 'Comunidade open source',
+    period: 'Contínuo',
+    icon: '🔬',
+    desc: 'Estudo da linguagem Crystal e fundamentos de outras tecnologias para ampliar o repertório técnico.',
   },
 ];
 
 const quickFacts = [
-  { icon: '📍', label: 'Localização',  value: 'São Paulo, Brasil'       },
-  { icon: '💼', label: 'Status',       value: 'Disponível para projetos' },
+  { icon: '📍', label: 'Localização',  value: 'Brasil'                   },
+  { icon: '💼', label: 'Status',       value: 'Open to work · 1ª vaga'   },
   { icon: '🎓', label: 'Formação',     value: 'Ciência da Computação'    },
-  { icon: '🌐', label: 'Idiomas',      value: 'PT, EN, ES'               },
-  { icon: '⚡', label: 'Foco atual',   value: 'Next.js + AI integrations' },
+  { icon: '⚙️', label: 'Foco',         value: 'Back-End'                 },
+  { icon: '⚡', label: 'Linguagens',   value: 'Python · Java · Crystal · SQL' },
 ];
 
 /* ─── SkillBar — animated fill on viewport entry ── */
@@ -235,8 +235,8 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.18, ease: [0.16, 1, 0.3, 1] }}
           >
-            Dev apaixonado<br />
-            por <span className={styles.heroAccent}>código limpo.</span>
+            Estudante apaixonado<br />
+            por <span className={styles.heroAccent}>back-end.</span>
           </motion.h1>
 
           <motion.p
@@ -245,8 +245,9 @@ export default function About() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.44, delay: 0.26 }}
           >
-            5+ anos construindo produtos que realmente importam — com foco em
-            escalabilidade, performance e experiências que encantam usuários.
+            Estudante de Ciências da Computação com sólida base em Back-End.
+            Proativo, autodidata e em busca da primeira oportunidade para
+            crescer junto com uma equipe.
           </motion.p>
 
           {/* Floating stat chips */}
@@ -257,10 +258,10 @@ export default function About() {
             transition={{ duration: 0.4, delay: 0.34 }}
           >
             {[
-              { v: '5+',  l: 'Anos'      },
-              { v: '40+', l: 'Projetos'  },
-              { v: '15+', l: 'Stacks'    },
-              { v: '100%',l: 'Dedicação' },
+              { v: 'CC',     l: 'Estudante'  },
+              { v: 'Back',   l: 'Foco'       },
+              { v: '4',      l: 'Linguagens' },
+              { v: '100%',   l: 'Dedicação'  },
             ].map(({ v, l }) => (
               <div key={l} className={styles.heroChip}>
                 <span className={styles.heroChipVal}>{v}</span>
@@ -297,21 +298,22 @@ export default function About() {
               transition={{ duration: 0.52, ease: [0.16, 1, 0.3, 1] }}
             >
               <p>
-                Sou um desenvolvedor de software com mais de <strong>5 anos de experiência</strong>{' '}
-                construindo aplicações web de alta performance. Minha especialidade está em criar
-                sistemas escaláveis que unem código robusto no back‑end com experiências fluidas
-                no front‑end.
+                Sou estudante de <strong>Ciências da Computação</strong> com uma sólida base de
+                conhecimentos em desenvolvimento <strong>Back-End</strong>. Trabalho com Python,
+                Java e SQL como tecnologias principais, e venho explorando a linguagem Crystal
+                para ampliar minha visão sobre paradigmas de programação.
               </p>
               <p>
-                Atualmente trabalho como <strong>Senior Full Stack Developer</strong>, liderando
-                equipes e tomando decisões de arquitetura que impactam diretamente no produto e no
-                negócio. Acredito que bom software é aquele que resolve problemas reais com
-                elegância técnica.
+                Sou <strong>proativo</strong> e tenho forte habilidade de aprendizado rápido —
+                gosto de me aprofundar em problemas, ler documentação oficial e construir soluções
+                a partir dos fundamentos. Acredito que entender o "porquê" das coisas é tão
+                importante quanto saber usá-las.
               </p>
               <p>
-                Quando não estou codando, contribuo com projetos open source, escrevo sobre
-                desenvolvimento web e exploro as interseções entre IA generativa e produto.
-                Tenho especial interesse em DX (Developer Experience) e sistemas de design.
+                Estou em busca da <strong>primeira oportunidade de emprego</strong> para
+                contribuir com a empresa que me der a chance e desenvolver habilidades práticas no
+                ambiente de trabalho. Disponível para estágio, júnior, CLT ou PJ — remoto ou
+                presencial.
               </p>
 
               <div className={styles.bioActions}>
@@ -339,7 +341,7 @@ export default function About() {
                 <div className={styles.avatarGlow} />
               </div>
               <h3 className={styles.factsName}>Luan</h3>
-              <p className={styles.factsRole}>Senior Full Stack Developer</p>
+              <p className={styles.factsRole}>Estudante de CC · Back-End Developer</p>
 
               <div className={styles.factsList}>
                 {quickFacts.map(({ icon, label, value }) => (
@@ -426,8 +428,8 @@ export default function About() {
           >
             <p className={styles.pillsLabel}>Outras tecnologias:</p>
             <div className={styles.pills}>
-              {['Express', 'MongoDB', 'Prisma', 'Jest', 'Git', 'Linux',
-                'Figma', 'Storybook', 'Turborepo', 'Terraform'].map((t) => (
+              {['Pytest', 'JUnit', 'SQLite', 'Bash', 'VSCode',
+                'IntelliJ', 'POO', 'Lógica', 'REST', 'JSON'].map((t) => (
                 <span key={t} className={styles.pill}>{t}</span>
               ))}
             </div>

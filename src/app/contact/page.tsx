@@ -46,7 +46,7 @@ const socials = [
     icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>,
   },
   {
-    name: 'GitHub', href: 'https://github.com', color: '#e6e6e6', external: true,
+    name: 'GitHub', href: 'https://github.com/Luan-Knachak4', color: '#e6e6e6', external: true,
     icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>,
   },
   {
@@ -56,28 +56,28 @@ const socials = [
 ];
 
 const infoItems = [
-  { icon: '📍', label: 'Localização',    value: 'São Paulo, Brasil', sub: 'GMT-3 (BRT)' },
-  { icon: '⚡', label: 'Resposta',       value: '< 24 horas',       sub: 'dias úteis'   },
-  { icon: '🌐', label: 'Idiomas',        value: 'PT · EN · ES',     sub: 'fluente'      },
-  { icon: '💼', label: 'Disponível',     value: 'Freelance & CLT',  sub: 'remoto'       },
+  { icon: '📍', label: 'Localização',    value: 'Brasil',           sub: 'GMT-3 (BRT)' },
+  { icon: '⚡', label: 'Resposta',       value: '< 24 horas',       sub: 'todos os dias'},
+  { icon: '🎓', label: 'Formação',       value: 'CC · em curso',    sub: 'Back-End'    },
+  { icon: '💼', label: 'Status',         value: 'Open to work',     sub: '1ª oportunidade' },
 ];
 
 const faq = [
   {
-    q: 'Quais tipos de projeto você aceita?',
-    a: 'Desenvolvimento web full stack — MVPs para startups, sistemas enterprise, refatorações, design systems e consultoria técnica. Avaliamos juntos o escopo antes de qualquer compromisso.',
+    q: 'Qual é o seu nível de experiência?',
+    a: 'Sou estudante de Ciências da Computação em busca da primeira oportunidade profissional. Tenho base sólida em desenvolvimento Back-End construída por estudo autodidata e projetos práticos, e estou pronto para aplicar e aprofundar esses conhecimentos em um ambiente real de trabalho.',
   },
   {
-    q: 'Qual é o seu modelo de trabalho?',
-    a: 'Trabalho tanto CLT quanto PJ (freelance/contrato). 100% remoto, com disponibilidade para reuniões no fuso de São Paulo (GMT-3).',
+    q: 'Quais tecnologias você domina?',
+    a: 'Trabalho principalmente com Python e Java no back-end, SQL para banco de dados, e venho explorando a linguagem Crystal. Também tenho familiaridade com Git, Linux, REST APIs, FastAPI, Spring e fundamentos de Docker.',
   },
   {
-    q: 'Você faz projetos pequenos também?',
-    a: 'Sim! Desde uma landing page até um sistema completo. O tamanho não importa — o que importa é o alinhamento com o objetivo do projeto.',
+    q: 'Que tipo de vaga você procura?',
+    a: 'Estágio, júnior ou trainee em desenvolvimento Back-End. Estou aberto a CLT, PJ, remoto ou presencial — o mais importante é encontrar uma equipe onde eu possa contribuir e crescer profissionalmente.',
   },
   {
-    q: 'Como funciona o processo após o contato?',
-    a: 'Após a mensagem inicial, agendo uma call de 30 min para entender o contexto. Na sequência, envio uma proposta com escopo, prazo e investimento.',
+    q: 'Por que devo te contratar?',
+    a: 'Porque sou proativo, tenho forte habilidade de aprendizado rápido e estou comprometido em entregar bons resultados. Trago energia, vontade de aprender e a base técnica necessária para evoluir rapidamente dentro do time.',
   },
 ];
 
@@ -253,8 +253,8 @@ export default function Contact() {
               <motion.p className={styles.heroDesc}
                 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.42, delay: 0.22 }}>
-                Estou disponível para novos projetos, oportunidades e colaborações.
-                Preencha o formulário ou use um dos canais diretos abaixo.
+                Estou em busca da primeira oportunidade profissional em Back-End.
+                Preencha o formulário ou use um dos canais diretos abaixo — respondo rápido!
               </motion.p>
 
               {/* Availability */}
@@ -263,7 +263,7 @@ export default function Contact() {
                 transition={{ duration: 0.38, delay: 0.3 }}>
                 <div className={styles.availBadge} aria-label="Status: disponível">
                   <span className={styles.availDot} aria-hidden="true" />
-                  <span>Disponível para projetos</span>
+                  <span>Open to work · 1ª oportunidade</span>
                 </div>
                 <span className={styles.availSep} aria-hidden="true">·</span>
                 <span className={styles.availTime}>Resposta em menos de 24h</span>
@@ -349,7 +349,7 @@ export default function Contact() {
                   <p><span className={styles.tc}>$</span> status</p>
                   <p className={styles.td}>▸ Disponível para novos projetos</p>
                   <p><span className={styles.tc}>$</span> stack --primary</p>
-                  <p className={styles.td}>▸ Next.js · Node.js · PostgreSQL</p>
+                  <p className={styles.td}>▸ Python · Java · Crystal · SQL</p>
                   <p><span className={styles.tc}>$</span> contact --send</p>
                   <p className={styles.tCursor}>█</p>
                 </div>

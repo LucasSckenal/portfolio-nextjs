@@ -42,9 +42,9 @@ const Scene3D = dynamic(() => import('@/components/Scene3D'), {
 /* ─── Data ─────────────────────────────────── */
 
 const techStack = [
-  'Next.js', 'TypeScript', 'React', 'Node.js', 'PostgreSQL',
-  'Docker', 'AWS', 'Redis', 'GraphQL', 'Prisma',
-  'TailwindCSS', 'Framer Motion', 'MongoDB', 'Jest', 'Git',
+  'Python', 'Java', 'Crystal', 'SQL', 'PostgreSQL',
+  'MySQL', 'Git', 'Linux', 'Docker', 'REST APIs',
+  'FastAPI', 'Spring', 'JUnit', 'Pytest', 'GitHub',
 ];
 
 const services = [
@@ -55,9 +55,9 @@ const services = [
         <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
       </svg>
     ),
-    title: 'Front-end',
-    desc: 'Interfaces rápidas e acessíveis com React e Next.js. Do design system ao deploy — pixel-perfect e performáticas.',
-    techs: ['React', 'Next.js', 'TailwindCSS', 'Framer Motion'],
+    title: 'Back-end',
+    desc: 'Foco principal — desenvolvimento de APIs e lógica de negócio com Python e Java. Código limpo, testado e organizado.',
+    techs: ['Python', 'Java', 'FastAPI', 'Spring'],
   },
   {
     icon: (
@@ -68,9 +68,9 @@ const services = [
         <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/>
       </svg>
     ),
-    title: 'Back-end',
-    desc: 'APIs REST e GraphQL robustas, autenticação segura e bancos de dados modelados para escalar sem dor.',
-    techs: ['Node.js', 'PostgreSQL', 'Redis', 'Docker'],
+    title: 'Banco de Dados',
+    desc: 'Modelagem relacional, escrita de queries SQL e integração com aplicações back-end. Foco em estrutura clara e consultas eficientes.',
+    techs: ['SQL', 'PostgreSQL', 'MySQL', 'SQLite'],
   },
   {
     icon: (
@@ -80,41 +80,41 @@ const services = [
         <path d="M8 21h8m-4-4v4"/>
       </svg>
     ),
-    title: 'Arquitetura',
-    desc: 'Sistemas distribuídos, microsserviços e pipelines CI/CD que reduzem atrito e aumentam a confiabilidade em produção.',
-    techs: ['AWS', 'Kubernetes', 'GitHub Actions', 'Terraform'],
+    title: 'Estudo & Aprendizado',
+    desc: 'Habilidade comprovada de aprender rápido. Explorando linguagens novas como Crystal e fundamentos de algoritmos e estruturas de dados.',
+    techs: ['Crystal', 'Algoritmos', 'Git', 'Linux'],
   },
 ];
 
 const featured = [
   {
     num: '01',
-    title: 'E-Commerce Platform',
-    desc: 'Plataforma completa de vendas com carrinho, checkout Stripe, painel admin e relatórios em tempo real.',
-    tags: ['Next.js', 'Stripe', 'PostgreSQL'],
+    title: 'API REST em Python',
+    desc: 'Estudo de construção de API REST com FastAPI — autenticação, rotas CRUD e integração com banco de dados relacional.',
+    tags: ['Python', 'FastAPI', 'PostgreSQL'],
     href: '/projects',
   },
   {
     num: '02',
-    title: 'Task Manager App',
-    desc: 'Gerenciador de tarefas colaborativo com atualização em tempo real, drag-and-drop e notificações push.',
-    tags: ['React', 'Node.js', 'Socket.io'],
+    title: 'Sistema em Java',
+    desc: 'Aplicação back-end em Java explorando POO, persistência com JDBC e arquitetura em camadas.',
+    tags: ['Java', 'Spring', 'MySQL'],
     href: '/projects',
   },
   {
     num: '03',
-    title: 'API REST Microservices',
-    desc: 'Arquitetura distribuída com JWT, rate limiting, logs centralizados e deploy automatizado.',
-    tags: ['Node.js', 'Docker', 'Redis'],
+    title: 'Experimentos em Crystal',
+    desc: 'Explorando a linguagem Crystal — sintaxe Ruby-like com performance de C. Pequenas ferramentas e estudos.',
+    tags: ['Crystal', 'CLI', 'Estudos'],
     href: '/projects',
   },
 ];
 
 const stats = [
-  { value: 5,   suffix: '+', label: 'Anos de experiência' },
-  { value: 40,  suffix: '+', label: 'Projetos entregues'  },
-  { value: 15,  suffix: '+', label: 'Tecnologias'         },
-  { value: 100, suffix: '%', label: 'Clientes satisfeitos'},
+  { value: 4,   suffix: '',  label: 'Linguagens principais'  },
+  { value: 100, suffix: '%', label: 'Foco em aprendizado'    },
+  { value: 0,   suffix: '+', label: 'Procurando 1ª vaga'     },
+  { value: 24,  suffix: '/7',label: 'Disponibilidade'        },
 ];
 
 const process = [
@@ -266,10 +266,10 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.88 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.28 }}
-              aria-label="Cargo: Desenvolvedor de Software"
+              aria-label="Cargo: Estudante de Ciência da Computação · Back-End"
             >
               <span className={styles.badgePulse} aria-hidden="true" />
-              <span className={styles.badgeText}>Desenvolvedor de Software</span>
+              <span className={styles.badgeText}>Estudante de CC · Back-End</span>
             </motion.div>
 
             <motion.p
@@ -278,9 +278,10 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.45, delay: 0.34 }}
             >
-              Construo experiências digitais de alta performance — do back‑end
-              robusto ao front‑end que encanta. Focado em código limpo,
-              escalabilidade e UX.
+              Estudante de Ciências da Computação com sólida base em
+              desenvolvimento Back-End. Proativo e com forte habilidade
+              de aprendizado rápido — em busca da primeira oportunidade
+              para contribuir e crescer profissionalmente.
             </motion.p>
 
             <motion.div
@@ -310,9 +311,9 @@ export default function Home() {
               role="list"
             >
               {[
-                { value: '5+',  label: 'Anos'      },
-                { value: '40+', label: 'Projetos'  },
-                { value: '15+', label: 'Stacks'    },
+                { value: 'CC',     label: 'Estudante' },
+                { value: 'Back',   label: 'Foco'      },
+                { value: '4',      label: 'Linguagens'},
               ].map((s) => (
                 <div key={s.label} className={styles.stat} role="listitem">
                   <span className={styles.statValue}>{s.value}</span>
