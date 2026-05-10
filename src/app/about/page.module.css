@@ -134,20 +134,27 @@
   position: sticky; top: calc(var(--header-h) + 24px);
 }
 
-/* Avatar */
+/* Avatar — holds interactive 3D scene */
 .avatar {
   position: relative;
-  width: 88px; height: 88px; border-radius: 50%;
+  width: 140px; height: 140px; border-radius: 50%;
   background: var(--cyan-dim);
   border: 2px solid var(--cyan);
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-mono); font-size: 1.8rem;
   font-weight: 700; color: var(--cyan);
+  overflow: hidden;
+}
+.avatar > :global(canvas) {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
 }
 .avatarGlow {
-  position: absolute; inset: -6px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(0,229,255,0.15), transparent 70%);
+  position: absolute; inset: -10px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,229,255,0.2), transparent 70%);
   pointer-events: none;
+  z-index: -1;
 }
 
 .factsName  { font-size: 1.1rem; font-weight: 700; color: var(--white); }

@@ -20,7 +20,7 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import Link from 'next/link';
 import {
   motion,
@@ -32,12 +32,6 @@ import {
 } from 'framer-motion';
 import { StaggerContainer, StaggerItem } from '@/components/FadeIn';
 import styles from './page.module.css';
-
-/* 3D scene: client-only, loaded lazily so Three.js never hits SSR */
-const Scene3D = dynamic(() => import('@/components/Scene3D'), {
-  ssr: false,
-  loading: () => null,
-});
 
 /* ─── Data ─────────────────────────────────── */
 
@@ -332,15 +326,15 @@ export default function Home() {
             aria-hidden="true"
           >
             <div className={styles.photoFrame}>
-              {/* Interactive 3D blob — hover/click to morph */}
-              <div className={styles.sceneMount}>
-                <Scene3D />
-              </div>
-              {/* Interaction hint — appears over the frame */}
-              <div className={styles.sceneHint} aria-hidden="true">
-                <span className={styles.sceneHintDot} />
-                hover · click
-              </div>
+              {/* Real photo of Luan */}
+              <Image
+                src="/luan.jpg"
+                alt="Luan — Estudante de Ciências da Computação"
+                fill
+                sizes="(max-width: 980px) 260px, 320px"
+                style={{ objectFit: 'cover', objectPosition: 'center top' }}
+                priority
+              />
               {/* Corner accent */}
               <div className={styles.photoCorner} />
             </div>

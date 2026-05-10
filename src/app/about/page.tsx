@@ -12,11 +12,18 @@
 'use client';
 
 import { useRef } from 'react';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Breadcrumb from '@/components/Breadcrumb';
 import { StaggerContainer, StaggerItem } from '@/components/FadeIn';
 import styles from './page.module.css';
+
+/* 3D scene: client-only, loaded lazily so Three.js never hits SSR */
+const Scene3D = dynamic(() => import('@/components/Scene3D'), {
+  ssr: false,
+  loading: () => null,
+});
 
 /* ─── Data ─────────────────────────────────── */
 
@@ -337,7 +344,7 @@ export default function About() {
               transition={{ duration: 0.52, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className={styles.avatar} aria-hidden="true">
-                <span>L</span>
+                <Scene3D />
                 <div className={styles.avatarGlow} />
               </div>
               <h3 className={styles.factsName}>Luan</h3>
