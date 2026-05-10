@@ -5,8 +5,8 @@ import Footer from '@/components/Footer';
 import PageTransition from '@/components/PageTransition';
 
 export const metadata: Metadata = {
-  title: { default: 'Luan | Dev Portfolio', template: '%s | Luan' },
-  description: 'Portfólio de desenvolvedor de software — Luan.',
+  title: { default: 'Luan | Back-End Developer', template: '%s | Luan' },
+  description: 'Portfólio de Luan — estudante de Ciências da Computação com foco em desenvolvimento Back-End. Python, Java, Crystal e SQL.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

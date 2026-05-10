@@ -289,7 +289,7 @@ export function FrontendObject({ hovered, pointer }: ObjectProps) {
 export function ToolingObject({ hovered, pointer }: ObjectProps) {
   const groupRef = useRef<THREE.Group>(null);
   const matRef   = useRef<THREE.MeshStandardMaterial>(null);
-  const octaRef  = useRef<THREE.Mesh>(null);
+  const octaRef  = useRef<THREE.Group>(null);
 
   /* Compute EdgesGeometry once */
   const edgesGeo = useMemo(() => {

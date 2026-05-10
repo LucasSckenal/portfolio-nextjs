@@ -14,7 +14,7 @@ export default function Footer() {
         </p>
 
         <div className={styles.socials}>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+          <a href="https://github.com/Luan-Knachak4" target="_blank" rel="noopener noreferrer"
              className={styles.socialLink} aria-label="GitHub">
             <svg width="17" height="17" viewBox="0 0 24 24" fill="none"
                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

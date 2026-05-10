@@ -275,7 +275,7 @@ export default function Projects() {
               <h2 id="os-title" className={styles.osTitle}>Também no GitHub</h2>
               <p className={styles.osDesc}>Confira contribuições open source, experimentos e projetos pessoais.</p>
             </div>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.osBtn}>
+            <a href="https://github.com/Luan-Knachak4" target="_blank" rel="noopener noreferrer" className={styles.osBtn}>
               Ver GitHub →
             </a>
           </div>
