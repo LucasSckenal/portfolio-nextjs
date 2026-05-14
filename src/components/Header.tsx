@@ -14,44 +14,49 @@
  * - scroll-based border/shadow (no opacity jump)
  * ─────────────────────────────────────────────
  */
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import styles from './Header.module.css';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import styles from "./Header.module.css";
 
 const navLinks = [
-  { href: '/',         label: 'Home'     },
-  { href: '/about',    label: 'About'    },
-  { href: '/projects', label: 'Projects' },
-  { href: '/contact',  label: 'Contact'  },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
-  const pathname  = usePathname();
-  const [open,     setOpen]     = useState(false);
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handler, { passive: true });
-    return () => window.removeEventListener('scroll', handler);
+    window.addEventListener("scroll", handler, { passive: true });
+    return () => window.removeEventListener("scroll", handler);
   }, []);
 
   // Close mobile menu on navigation
-  useEffect(() => { setOpen(false); }, [pathname]);
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={`container ${styles.inner}`}>
-
         {/* ── Logo ── */}
         <Link href="/" className={styles.logo} aria-label="Home">
-          <span className={styles.bracket}>&lt;</span>
-          <span className={styles.name}>Luan</span>
-          <span className={styles.bracket}>/&gt;</span>
+          <div className={styles.logoMark}>
+            <span className={styles.logoText}>
+              LU<span className={styles.delta}>Δ</span>N
+            </span>
+
+            <span className={styles.logoGlow}></span>
+          </div>
         </Link>
 
         {/* ── Desktop Nav ── */}
@@ -63,8 +68,8 @@ export default function Header() {
                 <li key={href} className={styles.navItem}>
                   <Link
                     href={href}
-                    className={`${styles.navLink} ${active ? styles.active : ''}`}
-                    aria-current={active ? 'page' : undefined}
+                    className={`${styles.navLink} ${active ? styles.active : ""}`}
+                    aria-current={active ? "page" : undefined}
                   >
                     {label}
                     {/* Animated underline — LayoutId makes it slide between links */}
@@ -91,15 +96,15 @@ export default function Header() {
           </div>
 
           <Link href="/contact" className={styles.cta}>
-            Hire me
+            Iniciar projeto
           </Link>
 
           {/* ── Hamburger (mobile only) ── */}
           <button
             className={styles.hamburger}
-            onClick={() => setOpen(v => !v)}
+            onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
-            aria-label={open ? 'Fechar menu' : 'Abrir menu'}
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
           >
             <motion.span
               className={styles.bar}
@@ -108,7 +113,9 @@ export default function Header() {
             />
             <motion.span
               className={styles.bar}
-              animate={open ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }}
+              animate={
+                open ? { opacity: 0, scaleX: 0 } : { opacity: 1, scaleX: 1 }
+              }
               transition={{ duration: 0.15 }}
             />
             <motion.span
@@ -126,7 +133,7 @@ export default function Header() {
           <motion.div
             className={styles.mobileMenu}
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22, ease: [0.4, 0, 0.2, 1] }}
           >
@@ -141,8 +148,8 @@ export default function Header() {
                   >
                     <Link
                       href={href}
-                      className={`${styles.mobileLink} ${pathname === href ? styles.mobileLinkActive : ''}`}
-                      aria-current={pathname === href ? 'page' : undefined}
+                      className={`${styles.mobileLink} ${pathname === href ? styles.mobileLinkActive : ""}`}
+                      aria-current={pathname === href ? "page" : undefined}
                     >
                       {label}
                     </Link>
