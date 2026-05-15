@@ -13,13 +13,59 @@
   gap: 16px;
 }
 
-.logo {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  font-weight: 700;
-  /* static text — no cursor, no hover effect */
+/* ── Logo ── */
+.logoMark {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
-.cyan { color: var(--cyan); }
+
+.logoText {
+  position: relative;
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: -0.08em;
+  color: white;
+
+  transition:
+    transform 0.3s ease,
+    text-shadow 0.3s ease;
+}
+
+.delta {
+  color: var(--cyan);
+
+  text-shadow:
+    0 0 10px rgba(0, 229, 255, 0.8),
+    0 0 20px rgba(0, 229, 255, 0.4);
+}
+
+.logoGlow {
+  position: absolute;
+  inset: -8px;
+  border-radius: 12px;
+
+  background:
+    radial-gradient(circle,
+      rgba(0, 229, 255, 0.15),
+      transparent 70%);
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  pointer-events: none;
+}
+
+.logo:hover .logoText {
+  transform: translateY(-1px);
+
+  text-shadow:
+    0 0 12px rgba(255, 255, 255, 0.15);
+}
+
+.logo:hover .logoGlow {
+  opacity: 1;
+}
 
 .copy {
   font-size: 0.78rem;
@@ -45,22 +91,27 @@
   border: 1px solid var(--border);
   cursor: pointer;
   transition:
-    color         var(--transition),
-    border-color  var(--transition),
-    background    var(--transition),
-    transform     var(--transition);
+    color var(--transition),
+    border-color var(--transition),
+    background var(--transition),
+    transform var(--transition);
 }
+
 .socialLink:hover {
   color: var(--cyan);
   border-color: var(--cyan-border);
   background: var(--cyan-dim);
   transform: translateY(-2px);
 }
+
 .socialLink:focus-visible {
   outline: 2px solid var(--cyan);
   outline-offset: 2px;
 }
 
 @media (max-width: 600px) {
-  .inner { justify-content: center; text-align: center; }
+  .inner {
+    justify-content: center;
+    text-align: center;
+  }
 }
