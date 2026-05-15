@@ -1,0 +1,72 @@
+.terminal {
+  position: absolute;
+  inset: 2% -14% -8% 2%;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 1;
+  transform: perspective(900px) rotateX(8deg) rotateZ(-8deg) scale(1.18);
+  transform-origin: 52% 52%;
+  filter: blur(0.25px);
+  mask-image: radial-gradient(ellipse 78% 72% at 50% 50%, black 28%, transparent 82%);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.34), transparent 35%, rgba(0, 0, 0, 0.58)),
+    radial-gradient(circle at 52% 48%, transparent 0 30%, rgba(0, 0, 0, 0.28) 68%);
+  backdrop-filter: blur(0.8px);
+}
+
+.beam {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(90deg, transparent, rgba(0, 229, 255, 0.08), transparent),
+    radial-gradient(circle at 48% 46%, rgba(0, 229, 255, 0.1), transparent 58%);
+  opacity: 0.5;
+  animation: terminalBeam 8s ease-in-out infinite;
+}
+
+.logs {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 34px 22px;
+  font-family: var(--font-mono);
+  will-change: transform;
+}
+
+.line {
+  color: rgba(136, 245, 255, 0.32);
+  font-size: 0.68rem;
+  line-height: 1.2;
+  letter-spacing: 0.035em;
+  white-space: nowrap;
+  text-shadow: 0 0 14px rgba(0, 229, 255, 0.2);
+  opacity: 0.88;
+}
+
+.prompt {
+  color: rgba(0, 229, 255, 0.5);
+  margin-right: 8px;
+}
+
+@keyframes terminalBeam {
+  0%,
+  100% {
+    transform: translateX(-8%);
+    opacity: 0.32;
+  }
+
+  50% {
+    transform: translateX(8%);
+    opacity: 0.58;
+  }
+}
